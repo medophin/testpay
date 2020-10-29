@@ -1,20 +1,36 @@
-<div id="paypal-button-container"></div>
-<script src="https://www.paypal.com/sdk/js?client-id=AXvBuwIP-3IEhNtFFb7PEsREiJHBy3P-zjCcvq4d_rJiphndJ4hVEWz4y9-RSM04ktKFIJ-ekqOQRN9P&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
-<script>
-  paypal.Buttons({
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>he maggie</title>
+
+  <div id="paypal-button-container"></div>
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=AXvBuwIP-3IEhNtFFb7PEsREiJHBy3P-zjCcvq4d_rJiphndJ4hVEWz4y9-RSM04ktKFIJ-ekqOQRN9P&vault=true&intent=subscription"
+    data-sdk-integration-source="button-factory"></script>
+  <script>
+    paypal.Buttons({
       style: {
-          shape: 'pill',
-          color: 'silver',
-          layout: 'vertical',
-          label: 'subscribe'
+        shape: 'pill',
+        color: 'silver',
+        layout: 'vertical',
+        label: 'subscribe'
       },
-      createSubscription: function(data, actions) {
+      createSubscription: function (data, actions) {
         return actions.subscription.create({
           'plan_id': 'P-5SJ26068A1471453RL6NC2WQ'
         });
       },
-      onApprove: function(data, actions) {
+      onApprove: function (data, actions) {
         alert(data.subscriptionID);
       }
-  }).render('#paypal-button-container');
-</script>
+    }).render('#paypal-button-container');
+  </script>
+</head>
+
+<body>
+  <h1>test paypal</h1>
+</body>
+
+</html>
